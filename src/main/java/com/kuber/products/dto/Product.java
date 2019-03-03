@@ -5,7 +5,7 @@ import lombok.Data;
 import org.springframework.cloud.gcp.data.datastore.core.mapping.Entity;
 import org.springframework.data.annotation.Id;
 
-@Entity(name = "products")
+@Entity(name = "products-dev")
 @AllArgsConstructor
 @Data
 public class Product {
