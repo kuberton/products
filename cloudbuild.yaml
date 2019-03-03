@@ -11,8 +11,8 @@ steps:
       - set
       - image
       - deployment
-      - payments
-      - payments=gcr.io/$PROJECT_ID/$REPO_NAME:$SHORT_SHA
+      - products
+      - products=gcr.io/$PROJECT_ID/$REPO_NAME:$SHORT_SHA
     env:
       - CLOUDSDK_COMPUTE_ZONE=europe-west1-b
       - CLOUDSDK_CONTAINER_CLUSTER=kube
