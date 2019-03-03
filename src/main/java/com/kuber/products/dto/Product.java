@@ -11,11 +11,13 @@ import org.springframework.data.annotation.Id;
 public class Product {
 
     @Id
-    String traderId;
+    String id;
 
     String name;
-
+    
     String image;
+
+    String description;
 
     Double price;
 }
