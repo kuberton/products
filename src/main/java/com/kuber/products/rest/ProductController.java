@@ -14,21 +14,21 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ProductController {
 
-//    @Autowired
-//    ProductsRepository repository;
+    @Autowired
+    ProductsRepository repository;
 
     @RequestMapping(value = "/health", method = RequestMethod.GET)
     public ResponseEntity getHealth() {
         return new ResponseEntity(HttpStatus.OK);
     }
 
-//    @RequestMapping(value = "/products/{id}", method = RequestMethod.GET)
-//    public Product getProductById(@PathVariable Long id) {
-//        return repository.findById(id).orElseGet(null);
-//    }
-//
-//    @RequestMapping(value = "/products", method = RequestMethod.GET)
-//    public Iterable<Product> getProductAll() {
-//        return repository.findAll();
-//    }
+    @RequestMapping(value = "/v1/products/{id}", method = RequestMethod.GET)
+    public Product getProductById(@PathVariable Long id) {
+        return repository.findByUid(id).stream().findFirst().orElseGet(null);
+    }
+
+    @RequestMapping(value = "/v1/products", method = RequestMethod.GET)
+    public Iterable<Product> getProductAll() {
+        return repository.findAll();
+    }
 }
