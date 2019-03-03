@@ -22,12 +22,12 @@ public class ProductController {
         return new ResponseEntity(HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/products/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/v1/products/{id}", method = RequestMethod.GET)
     public Product getProductById(@PathVariable Long id) {
-        return repository.findById(id).orElseGet(null);
+        return repository.findByUid(id).stream().findFirst().orElseGet(null);
     }
 
-    @RequestMapping(value = "/products", method = RequestMethod.GET)
+    @RequestMapping(value = "/v1/products", method = RequestMethod.GET)
     public Iterable<Product> getProductAll() {
         return repository.findAll();
     }

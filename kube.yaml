@@ -35,7 +35,7 @@ spec:
                       mountPath: /datastore.json
                   env:
                     - name: GOOGLE_APPLICATION_CREDENTIALS
-                      value: /datastore.json
+                      value: /datastore.json/json-auth.json
                   imagePullPolicy: Always
                   ports:
                       - containerPort: 8080
